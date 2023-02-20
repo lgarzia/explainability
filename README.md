@@ -50,3 +50,23 @@ Scikit learn - permutation_importance functions - inpute - fitted_model, feature
 Main disadvantages of PFI --> won't pick up on the impact of features correlated with each other; multicollinearity will trump feature importances.
 
 Interpreting PDPs... Partial Dependence Plots:
+PDP conveys the marginal effect of a feature on the prediction throughout all possible values for that feature
+
+- visually demonstrate the impact of a feature and the nature of the relationship with the target
+- can extend to two features - to illustrate interaction
+- one variation of the PDP - centers marginal effect'
+- one variation - show distribution of the feature
+
+Disadvantage of PDP
+only display up to two features at a time and assumed independence of features
+
+Accumulated Local Effect (ALE) - use to avoid issues of independence
+Results based on aggregation over averages
+
+ICE - look at each individual observations rather than an average
+
+Individul Conditional Expectation (ICE)
+What if my PDP plots obscure the variance in my feature-target relationship?
+
+Disadvantage of ICE - assumes independence of features, can't interact with two continuous or high-cardinality features.
+hard to ascertain the average relationship betweeo a feature and a target
