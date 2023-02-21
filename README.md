@@ -70,3 +70,31 @@ What if my PDP plots obscure the variance in my feature-target relationship?
 
 Disadvantage of ICE - assumes independence of features, can't interact with two continuous or high-cardinality features.
 hard to ascertain the average relationship betweeo a feature and a target
+
+Global Model-Agnostic Interpretation Methods
+
+permutation feature importance - better alternative to leveraging intrinsic model parameters
+learned partial dependence plots
+individual conditional expectation plots
+**All above sensitive to collinear features**
+
+1. Shapley Additive exPlanations (SHAP) <-- derived from coalitional game theory
+2. Accumulated Local Effects (ALE) plot <-- conditional marginal distribution
+   Both provide better alternatives to Partial Dependence Plots (PDPs)
+3. Global surrogates: white-box models that approximate back-box models
+
+Approach
+
+1. Prepare all the features - no nulls and are all numerical
+2. Determine features ability to predict target variable
+3. Ensure not overfitting
+4. Use SHAP to understand how conclusion reached
+5. Perform some statistical test to examine bivariate associations further and rule out any spurious correlations and systematic bias
+6. Explore feature effects on models more with ALE plots
+7. Gain further understanding of the underlying rules of the model with global surrogates
+
+XGBoost has three different algorithms to compute feature importance
+
+1. How often feature appears in the tree (weight)
+2. Average reduction in error due to a feature (gain)
+3. number of observations affected by a split involving a feature(cover)
