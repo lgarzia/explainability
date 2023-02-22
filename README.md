@@ -98,3 +98,49 @@ XGBoost has three different algorithms to compute feature importance
 1. How often feature appears in the tree (weight)
 2. Average reduction in error due to a feature (gain)
 3. number of observations affected by a split involving a feature(cover)
+
+Learning about Shapley Values
+
+coalitional game theory
+cooperative game theory
+
+different combination of players are _coalition_
+difference in scares are _marginal contributions_
+_Shapley value_ is average of these contribution over may simulations
+_payoff_ contribution of a feature (is reduction in predictive error, ...)
+_average marginal contribution by a feature across all possible subset_
+brute force - infeasible, leverage sampling of subset (e.g. Monte Carlo Sampling)
+Shapley algorithm calculates the features expected value over the entire dataset - serves as baseline
+
+propertiers
+Dummy --> feature i, never contributes, Shapley=0
+Substitutability --> if i & j contribute equally; Shapleyi = Shapleyj
+Additivity --> contribution of i in submodel add up
+Efficiency --> All shapley values must add up as the difference between predictions and expected values
+
+No pure SHAP implementation...
+
+SHapley Additive exPlanations -> collection of methods that approximate Shapley
+
+pg 202 - SHAP Explainers
+
+TreeExplainer --> TreeShap --> ... XGBoost, LightGBM, ...
+Deep Explainer --> DeepLife --> keras, pytorch
+GradientExplainer --> Integrated Gradient --> keras, pytorch
+LinearExplainer --> Shapely Regression Value --> sklearn.linear_model
+KernelExplainer --> LIME --> Model Agnostic
+SamplingExplainer --> Shapely Sampling Values --> Model-Agnostic
+PermutationExplainer --> Model-Agnostic
+PartitionExplainer --> Model-Agnostic
+AdditiveExplainer --> Model-Agnostic
+
+TreeExplainer -> uses conditional expectation instead of marginal -> can assign non-zero values for uninfluential features - ramification if feature collinear
+DeepLift -> attributed difference in output when provided a reference neutral input or baseline (feature wise mean)
+GradientExplainer -> leverages baseline, reformulate Gradients, which reformulates the integral as an expectations
+KernalExplainer -> most popular -> LIME (Local Model-Agnostic Interpretation Methods) - has challenges with dummy features and collinear features
+PermutationExplainer -> closest to brute force
+ParitionExplainer -> computes SHAP values on a treen; recommended many features belong to a group or category or have highly correlated features
+AdditiveExplainer -> fail if model is not Generalized Additive Model
+
+Initializing explainer -> requires fitted model, sometimes data
+Computing SHAP values (idea Test and Train to ensure consistency)
