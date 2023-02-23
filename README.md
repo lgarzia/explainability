@@ -144,3 +144,81 @@ AdditiveExplainer -> fail if model is not Generalized Additive Model
 
 Initializing explainer -> requires fitted model, sometimes data
 Computing SHAP values (idea Test and Train to ensure consistency)
+
+Mannings - https://github.com/munnm/XAI-for-practitioners
+Finished Chapter 3
+
+- Shapely values, permutation feature importance, tree interpreters, various versions of partial dependence plot
+
+Permutation Feature Imporance - Results can be misleading when features are highly correlated.
+perturbation-based feature attribution technique commonly used for tabular datasets
+determine impact each feature has on predictions bhy seeing how the models predictions vary
+permutation feature importance of a model is the decrease in a model score when a single feature value is randomly shuffled
+permutation feature importance is a post hoc, global, model-agnostic explainability technique
+scores are relative - only interpreted in relation to one another
+
+Permutation Feature Imporance in Scikit-Learn
+
+Shapely Values
+Attributions sum to the total predictive value
+Pass all examples X_Test to explainer
+
+Baseline prediction is just the expected value of the model output
+that is - the average of the model predictions on all values in test set. SHAP values of all the input
+features will sum up to the differences between the baseline model output and the model prediction for that example.
+summing the baseline value with the Shapley values gives the model prediction
+Shapley values simply indicate relative influence by a feature
+Usefu technique is to normalize the Shapley values for all features in a predictions to the range -1 to 1
+
+Interpreting Feature Attributions fromo Shapley Values
+3 pieces of information.
+
+1.  numerical contribution to the predictions score
+2.  whether feature contributed in the model moving from the baseline prediction score toward the predicted score or away from
+3.  relative magnitude of the feature contribution compared to other features
+
+does not necessarily mean a positive attribution contributed to the models prediction in a postive way, may be
+that this feature had less impact than other features.
+
+**Managed Shapley Value**
+Google Cloud Platform - Explainable AI
+CLI, Rest, Vertex AI Python SDK, Vertex AI Notebook ans Workbench
+
+Tree Based Models
+Decision trees easliy allow for counterfactual analysis in that a user is able to ask (and answer) what if questions.
+
+Don't do well predicting values that lie outside the range of the training data
+models are inherently noncontinuous functions
+random forest - since the prediction is the average of the predictions of all the trees in the forest,
+the explanation of the prediction is simply the average of the bias terms plus the average of the contribution of each feature
+within each tree
+
+library - treeinterpreter
+SHAPs TreeExplainer - optimized
+
+Partial Dependence Plots and Related Plots
+Partial Dependence Plots (PDPs), Individual Conditional Expectations (ICE) plots and Accumulated Local Effects (ALE) plots are
+closely related family of explainability tools that allow for visualizing the causal interaction between features and model predictions.
+
+Applied after model been fully trained and used to visualize the interaction between one or two features of entire training dataset of the model and output label
+
+partial dependence plots are global, individual conditional expectations and accumulated local effects plots are local
+
+PDPs - useful technique to visualize the marginal effect a specific feature has on a model's prediction
+When feature is not correlated to other features, it is possibe to infer a causal relationship between the feature and the model predction
+Measure how the expected value of the model output changes with respect to the feature value
+Plot describes precisely how the predicted output varibale changes on average with respect to given feature
+PDP marginal effect a feature has on the predicted probabilities
+
+avoid condition of independence --- use conditional distribution instead of marginal distribution (ALE)
+
+ICE Plots extend partial dependence plots by visualizing the dependence on a feature for each instance in the dataset
+
+partial dependence plot is an average of the model prediction values obtained in the ICE plot
+
+Accumulated Local Effects (ALE)
+takes into account conditional dependence of correlated features and by computing the marginal effect by taking differences instead of averages
+Unlikely outcomes weighted less.... 5 ft height, 300 lbs
+
+Mitigate this issue by taking the differences of model predictions in place of averags
+5.1, 4.9 compute difference
