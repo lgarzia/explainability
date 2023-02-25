@@ -222,3 +222,39 @@ Unlikely outcomes weighted less.... 5 ft height, 300 lbs
 
 Mitigate this issue by taking the differences of model predictions in place of averags
 5.1, 4.9 compute difference
+
+--- Started chapter 5: Explainability for Text (Notes forthcoming)
+...
+Understanding Interactions - interaction of feature in black box challenging
+80/20 rule - most salient interactions among top tiers
+top features across different models
+correlation analysis - spearman good for linear relationships
+point-biserial correlation <-- >=like Spearman but between a dichotomous and a continuous variable
+
+**SHAP dependence plots**
+SHAP dependence plot is between the SHAP value for a feature on the y-axis and the feature value on the x-axis.
+Model will pick up on obscure interaction - data quality issues
+
+**SHAP force plots**
+Used to explain a single prediction. Force plots depict a continuum, where blue features represent forces pushing predictions
+in a negative direction and red ones represent forces pushing predictions in a positive direction.
+Stack the local interpretations vertically side by side, create global interpretation.
+
+**Accumulated Local Effects (ALE) plots**
+take approach by factoring data distributions when calculating the effects of a feature
+split feature inot equally sized intervals (typically, quantile)
+Compute how much the predictions change, on average, in each of these intervals
+Sum the effect across all intervals -
+effects relative to an average, centered around 0
+isolates one effect from the other
+
+**Global Surrogates**
+If you want to distill some insights that are too difficult to interpret by other means - some rules that explain underlying logic
+
+- or coefficients that capture magnitude and direction of a feature for the model
+  these features built into intrinisically interpretable models.
+
+white-box model trained with black-box model's predictions
+certain models designed to be used as surrogates - TREPAN; BAyesian Rule List Classifier (BRLC)
+
+Used Decision Tree for hierarchy, RuleFit understand rules
