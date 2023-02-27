@@ -258,3 +258,21 @@ white-box model trained with black-box model's predictions
 certain models designed to be used as surrogates - TREPAN; BAyesian Rule List Classifier (BRLC)
 
 Used Decision Tree for hierarchy, RuleFit understand rules
+
+---
+
+Local Model - Agnostic Interpretation Methods
+explain why a single prediction or a group of predictions was made
+
+- Shapely Additive exPlanations (SHAP) - KernelExplainer
+- Local Interpretable Model-agnostic Explanations (LIME)
+
+lime_tabular, LimeTextExplainer
+KernalExplainer is truly model-agnostic
+it samples a subset of all feature permutations for coalitions
+and uses a weighting scheme according to the size of the coalition to compute SHAP values. 2nd point inspired by LIME
+KernalExpaj er - recommends using k-means to summarize background training
+Local interpretation for a group of predictons using decision plots
+SHAP's decision plot - highlight feature
+
+SHAP's force plot - requires expected values, SHAP values, actual values
