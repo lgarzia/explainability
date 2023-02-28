@@ -276,3 +276,24 @@ Local interpretation for a group of predictons using decision plots
 SHAP's decision plot - highlight feature
 
 SHAP's force plot - requires expected values, SHAP values, actual values
+
+SHAP - however, even when it can be observed locally, what was quantified globablly may not apply locally.
+
+LIME - quantifies the local effect of features solely for local interpretations.
+
+LIME trains local surrogates to explain a single prediction. Specify datapoint, makes predictions on a perturbed version of the dataset with the model, creating a scheme whereby it samples and weighs points higher if they are closer to chosen data points.
+in short - trains weighted intrinsically interpretable surrogate models and interprets.
+
+LIME uses a sparse linear model with weighted ridge regularization.
+Assumes every complex model is linear locally
+LimeTabularExplainer
+
+Note - 1. Local neighborhood could be too small; 2. Linear model are on bias end of bias-variance trade-off. Exacerbated if some feature appears
+relatively more often.
+
+Using LIME for NLP:
+TD-IDF scores are normalized between 0 and 1
+LimeTextExplainer - pass in a "pipeline that contains text transformations
+Out of vocabulary -> prediction being majority class
+
+SHAP for NLP -
