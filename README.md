@@ -297,3 +297,5 @@ LimeTextExplainer - pass in a "pipeline that contains text transformations
 Out of vocabulary -> prediction being majority class
 
 SHAP for NLP -
+
+- read offline; will transfer notes
