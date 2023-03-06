@@ -2,5 +2,11 @@
 *.zip
 *.csv
 *.hdf5
+*.pyc
+*.exe
 venv
 notes.txt
+/local_data/venv_mshp_download
+local_data/data/date_check_dbm.bak
+local_data/data/date_check_dbm.dat
+local_data/data/date_check_dbm.dir

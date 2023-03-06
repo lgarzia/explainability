@@ -1,0 +1,34 @@
+Missouri Highway Patrol - requires a fair amount of scrapping
+https://www.mshp.dps.missouri.gov/HP68/search.jsp
+
+Missouri Education Department - requires an inordinate amount of scrapping and assembling
+https://apps.dese.mo.gov/MCDS/home.aspx
+
+
+looking for modern web scrapping
+webscrappers
+
+Approach here:
+Splinter sits on top of selenium
+https://splinter.readthedocs.io/en/latest/
+Selenium/BeautifulSoup
+Example to exploit: https://github.com/huntermgilbert/MSHP-Scrape
+
+
+Alternatives - won't explore further
+https://mechanicalsoup.readthedocs.io/en/stable/
+https://docs.scrapy.org/en/latest/ 
+
+
+Playwright looks legit - will keep in mind from a unit testing (perhaps my Flask App)
+https://new.pythonforengineers.com/blog/web-automation-dont-use-selenium-use-playwright/
+The killer feature of Playwright is: You can automatically generate tests by opening a web browser and manually running through the steps you want.
+https://playwright.dev/python/?ref=python-for-engineers
+https://github.com/microsoft/playwright-python
+
+
+Random stuff: 
+selenium-stealth
+undetected-chromedriver
+casperjs puppeeteer phantomjs
+https://pypi.org/project/ghettobird/

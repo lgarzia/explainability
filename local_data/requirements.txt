@@ -1,0 +1,4 @@
+splinter[selenium]
+pandas
+selenium
+lxml
