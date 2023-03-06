@@ -10,3 +10,6 @@ notes.txt
 local_data/data/date_check_dbm.bak
 local_data/data/date_check_dbm.dat
 local_data/data/date_check_dbm.dir
+local_data/data/mshp.sqlite
+local_data/.ipynb_checkpoints/load_into_db-checkpoint.ipynb
+local_data/data/mshp.sqbpro
