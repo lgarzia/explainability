@@ -1,5 +1,28 @@
 # Explainability Tutorials & Libraries
 
+## Raw Data - Missouri Highway Patrol Accident Data
+Leveraging a real data set scrapped from [MSHP](https://www.mshp.dps.missouri.gov/HP68/SearchAction)
+
+The base schema is:
+![Basic Dataflow](./artifacts/MSHP-Explainability.svg)
+
+## Exploratory Data Analysis
+Leverage following core libraries
+* Generate Automated Reports
+  * [SweetViz](https://pypi.org/project/sweetviz/)
+  * [pandas profiling](https://pypi.org/project/pandas-profiling/)
+* Exploratory Inspections
+  * [Lux](https://github.com/lux-org/lux)
+  * [dataprep](https://docs.dataprep.ai/index.html#)
+  * [Chart Me](https://pypi.org/project/chart_me/) 
+Explore other candidates
+* [autoviz](https://pypi.org/project/autoviz/)
+Looks Interesting to check out
+* [yopo](https://pypi.org/project/yopo/)
+
+## Data Cleansing and Feature Engineering
+  * [dataprep](https://docs.dataprep.ai/index.html#)
+
 ## Microsofts InterpretML
 [Interpret.Ml](https://interpret.ml/)
 [Whitepaper](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/InterpretML-Whitepaper.pdf)
