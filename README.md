@@ -9,16 +9,16 @@ The base schema is:
 ## Exploratory Data Analysis
 Leverage following core libraries
 * Generate Automated Reports
-  * [SweetViz](https://pypi.org/project/sweetviz/)
+  * [dataprep](https://docs.dataprep.ai/index.html#) - last update Jul 7th
+  * [SweetViz](https://pypi.org/project/sweetviz/) - last update June 8th
   * [pandas profiling](https://pypi.org/project/pandas-profiling/)
+  * [ydata-profiling - replace pandas profiling](https://github.com/ydataai/ydata-profiling) - last update a couple days ago <-- does Spark too
 * Exploratory Inspections
   * [Lux](https://github.com/lux-org/lux)
-  * [dataprep](https://docs.dataprep.ai/index.html#)
   * [Chart Me](https://pypi.org/project/chart_me/) 
-Explore other candidates
-* [autoviz](https://pypi.org/project/autoviz/)
-Looks Interesting to check out
-* [yopo](https://pypi.org/project/yopo/)
+* Explore other candidates
+  * [autoviz](https://pypi.org/project/autoviz/)
+  * [yopo](https://pypi.org/project/yopo/)
 
 ## Data Cleansing and Feature Engineering
   * [dataprep](https://docs.dataprep.ai/index.html#)
